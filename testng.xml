@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite" parallel="methods" thread-count="3">
+<suite name="Test Suite" parallel="methods" thread-count="1">
+
+    <listeners>
+        <listener class-name="org.testng.reporters.FailedReporter"/>
+    </listeners>
+
     <test verbose="2" preserve-order="true" name="Test">
 
-      <groups>
-          <run>
-              <include name="test1"/>
-          </run>
 
-      </groups>
+<!--      <groups>-->
+<!--          <run>-->
+<!--              <include name="smoke"/>-->
+<!--          </run>-->
 
-        <packages>
-            <package name="test_classes.*"/>
-        </packages>
+<!--      </groups>-->
+
+<!--        <packages>-->
+
+<!--            <package name="test_classes.*"/>-->
+<!--        </packages>-->
+
+        <classes>
+<!--            <class name="test_classes.Groups"/>-->
+            <class name="test_classes.ActionsClass"/>
+<!--            <class name="test_classes.ActionsClass"/>-->
+
+
+        </classes>
+
 
 
     </test>
+
 </suite>
